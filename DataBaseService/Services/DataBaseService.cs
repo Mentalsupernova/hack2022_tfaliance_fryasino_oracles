@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace DataBaseService
 {
-    public class GreeterService : Greeter.GreeterBase
+    public class DataBaseService : DataBase.DataBaseBase
     {
-        private readonly ILogger<GreeterService> _logger;
-        public GreeterService(ILogger<GreeterService> logger)
+        private readonly ILogger<DataBaseService> _logger;
+        public DataBaseService(ILogger<DataBaseService> logger)
         {
             _logger = logger;
         }

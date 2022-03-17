@@ -1,13 +1,24 @@
 syntax = "proto3";
 
-option csharp_namespace = "DataBaseService";
+option csharp_namespace = "MessageNotifyerService";
 
 package greet;
 
 // The greeting service definition.
-service Greeter {
+service MessageNotifyer {
   // Sends a greeting
   rpc SayHello (HelloRequest) returns (HelloReply);
+}
+
+service Fucker{
+	rpc SayFack(FuckRequest) returns (FuckReply);
+}
+
+message FuckRequest {
+  string Fuck = 2;
+}
+message FuckReply {
+  string message = 2;
 }
 
 // The request message containing the user's name.

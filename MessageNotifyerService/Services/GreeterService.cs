@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MessageNotifyerService
 {
-    public class GreeterService : Greeter.GreeterBase
+    public class GreeterService : MessageNotifyer.MessageNotifyerBase
     {
         private readonly ILogger<GreeterService> _logger;
         public GreeterService(ILogger<GreeterService> logger)

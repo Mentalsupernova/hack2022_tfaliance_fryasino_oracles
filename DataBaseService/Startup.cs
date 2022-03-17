@@ -31,7 +31,7 @@ namespace DataBaseService
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGrpcService<GreeterService>();
+                endpoints.MapGrpcService<DataBaseService>();
 
                 endpoints.MapGet("/", async context =>
                 {
