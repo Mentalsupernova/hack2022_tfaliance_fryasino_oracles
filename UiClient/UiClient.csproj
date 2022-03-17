@@ -13,6 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.32.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.RazorPages" Version="2.2.5" />
     <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.2.0" />
@@ -27,6 +28,15 @@
     <Content Remove="$(SpaRoot)**" />
     <None Remove="$(SpaRoot)**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="..\DataBaseService\Protos\DataBase.proto" GrpcServices="Client">
+      <Link>Protos\DataBase.proto</Link>
+    </Protobuf>
+    <Protobuf Include="..\MessageNotifyerService\Protos\MessageNotifyer.proto" GrpcServices="Client">
+      <Link>Protos\MessageNotifyer.proto</Link>
+    </Protobuf>
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
