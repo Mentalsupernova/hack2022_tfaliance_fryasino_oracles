@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Services\MessageSerivce.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Protobuf Include="..\DataBaseService\Protos\DataBase.proto" GrpcServices="Client">
       <Link>Protos\DataBase.proto</Link>
     </Protobuf>

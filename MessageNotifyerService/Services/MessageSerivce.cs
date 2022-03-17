@@ -8,30 +8,35 @@ using System.Threading.Tasks;
 
 namespace MessageNotifyerService
 {
-    public class GreeterService : MessageNotifyer.MessageNotifyerBase
+    public class MessageSerivce : MessageNotifyer.MessageNotifyerBase
     {
-        private readonly ILogger<GreeterService> _logger;
-        ClientToDataBaseService t;
 
-        public GreeterService(ILogger<GreeterService> logger)
+        private string MessageToDb;
+        private readonly ILogger<MessageSerivce> _logger;
+        public MessageSerivce(ILogger<MessageSerivce> logger)
         {
             _logger = logger;
-            
-            Console.WriteLine(_logger);
-
-            t = new ClientToDataBaseService();
-            t.SendMessage("ext");
+            Console.WriteLine(123);
+            ClientToDataBaseService s = new ClientToDataBaseService();
+            s.SendMessage(MessageToDb);
 
         }
 
         public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
         {
-         
-
+            this.MessageToDb = request.Name;
             return Task.FromResult(new HelloReply
             {
                 Message = "Hello " + request.Name
-            });
+
+            }
+            ); 
+        }
+
+        private void TestVoid()
+        {
+
+            
         }
     }
 }
