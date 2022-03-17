@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+//TODO create timestamp fiueld for user arived
+//TODO create field with timestamp last user communication
 namespace DataBaseService.Services
 {
     interface IDataBase
