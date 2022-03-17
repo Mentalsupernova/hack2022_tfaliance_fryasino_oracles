@@ -9,14 +9,16 @@ namespace DataBaseService.Services
 {
     interface IDataBase
     {
-        string GetUserMessageFromBase();
+        string GetUserMessageFromBase(string userID);
 
         void AddUserToDataBase(string userId);
 
-        void AddMessageFromUser(string userId, string Message);
+        void AddMessageFromUser(string userId, string Message,DateTime time);
 
         string GetMessageFromUser(string userId);
 
         string GetAllMesageFromUser(string userId);
+
+
     }
 }

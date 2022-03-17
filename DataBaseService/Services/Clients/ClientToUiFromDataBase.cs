@@ -25,6 +25,7 @@ namespace DataBaseService.Services.Clients
             //Console.Write("Введите имя: ");
             //string name = Console.ReadLine();
             // обмениваемся сообщениями с сервером
+
             var ryply = client.SayHello(new TelegramBotService.HelloRequest { Name = name });
             //Console.WriteLine(ryply);
             //var reply = await client.SayHelloAsync(new HelloRequest { Name = name });*/
