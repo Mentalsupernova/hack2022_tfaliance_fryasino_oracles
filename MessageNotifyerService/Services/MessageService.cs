@@ -11,7 +11,11 @@ namespace MessageNotifyerService
     public class MessageService : MessageNotifyer.MessageNotifyerBase
     {
         private readonly ILogger<MessageService> _logger;
-        ClientToDataBaseService t;
+        private ClientToDataBaseService ClientToDataBase;
+        private ClientToUserUiFrom_notify ClientToUserUI;
+
+
+
 
         public MessageService(ILogger<MessageService> logger)
         {
@@ -19,8 +23,8 @@ namespace MessageNotifyerService
             
             Console.WriteLine(_logger);
 
-            t = new ClientToDataBaseService();
-            t.SendMessage("ext");
+            ClientToDataBase = new ClientToDataBaseService();
+            ClientToDataBase.SendMessage("ext");
 
         }
 

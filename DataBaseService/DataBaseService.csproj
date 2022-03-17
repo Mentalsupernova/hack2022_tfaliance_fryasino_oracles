@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Protobuf Include="..\TelegramBotService\Protos\Telegrams.proto" GrpcServices="Client">
+      <Link>Protos\Telegrams.proto</Link>
+    </Protobuf>
     <Protobuf Include="Protos\DataBase.proto" GrpcServices="Server" />
   </ItemGroup>
 

@@ -1,4 +1,5 @@
 using DataBaseService.Services;
+using DataBaseService.Services.Clients;
 using Grpc.Core;
 using Microsoft.Extensions.Logging;
 using System;
@@ -11,7 +12,9 @@ namespace DataBaseService
     public class DataBaseService : DataBase.DataBaseBase
     {
         
-        private DataBaseWorker worker;
+        private DataBaseWorker worker; // Класс для работы с БД
+        private ClientToTelegramFromDataBase clienToTelegram; // Клиент к TG
+        private ClientToUiFromDataBase ClientToUi;   //Клиент к UI
 
         private readonly ILogger<DataBaseService> _logger;
         public DataBaseService(ILogger<DataBaseService> logger)
