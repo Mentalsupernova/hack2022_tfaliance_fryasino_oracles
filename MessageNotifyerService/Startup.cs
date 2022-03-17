@@ -31,7 +31,7 @@ namespace MessageNotifyerService
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGrpcService<GreeterService>();
+                endpoints.MapGrpcService<MessageService>();
 
                 endpoints.MapGet("/", async context =>
                 {

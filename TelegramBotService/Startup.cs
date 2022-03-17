@@ -31,7 +31,7 @@ namespace TelegramBotService
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGrpcService<GreeterService>();
+                endpoints.MapGrpcService<TelegramService>();
 
                 endpoints.MapGet("/", async context =>
                 {
