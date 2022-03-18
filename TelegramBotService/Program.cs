@@ -10,10 +10,12 @@ namespace TelegramBotService
 {
     public class Program
     {
-
+        //Bot bot;
         public static void Main(string[] args)
         {
+            Bot bot = new Bot();
             CreateHostBuilder(args).Build().Run();
+            
         }
 
         // Additional configuration is required to successfully run gRPC on macOS.
