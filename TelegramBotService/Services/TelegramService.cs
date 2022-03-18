@@ -10,9 +10,14 @@ namespace TelegramBotService
     public class TelegramService : Telegrams.TelegramsBase 
     {
         private readonly ILogger<TelegramService> _logger;
+        private ClientToNotify toNotify;
+        private ClientToDataBaseService toDataBaseService;
+
         public TelegramService(ILogger<TelegramService> logger)
         {
             _logger = logger;
+            toNotify = new ClientToNotify();
+            toDataBaseService = new ClientToDataBaseService();
         }
 
         public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)

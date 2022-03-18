@@ -18,7 +18,7 @@ namespace DataBaseService.Services.Clients
 
             // создаем канал для обмена сообщениями с сервером
             // параметр - адрес сервера gRPC
-            using var channel = GrpcChannel.ForAddress("http://localhost:4999");
+            using var channel = GrpcChannel.ForAddress("http://localhost:4996");
             // создаем клиента
             var client = new TelegramBotService.Telegrams.TelegramsClient(channel);
 

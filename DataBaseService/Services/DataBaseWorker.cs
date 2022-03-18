@@ -11,10 +11,11 @@ namespace DataBaseService.Services
     {
         protected string ConnectStringToDataBase = "mongodb://undead_sheep:foxtrot_uniform@127.0.0.1:27017";
         MongoClient client;
-        
+        IMongoDatabase UsersTable;
         public DataBaseWorker()
         {
             client = new MongoClient(ConnectStringToDataBase);
+            client.StartSession();
         }
 
         public void ConnectToDataBase()
@@ -29,12 +30,20 @@ namespace DataBaseService.Services
 
         public void AddMessageFromUser(string userId, string Message,DateTime time)
         {
-
+            UsersTable = client.GetDatabase("users");
+            //UsersTable.data
             throw new NotImplementedException();
         }
 
         public void AddUserToDataBase(string userId)
         {
+            var database = client.GetDatabase("Users");
+
+            //get mongodb collection
+            //var collection = database.GetCollection<string>("users");
+
+            //await collection.InsertOneAsync(new <string> { Name = "Jack" });
+
             throw new NotImplementedException();
         }
 

@@ -18,7 +18,7 @@ namespace MessageNotifyerService.Services.Client
             // создаем канал для обмена сообщениями с сервером
             // параметр - адрес сервера gRPC
 
-            /*            using var channel = GrpcChannel.ForAddress("http://localhost:4999");
+            /*            using var channel = GrpcChannel.ForAddress("http://localhost:55310");
                         // создаем клиента
                         var client = new TelegramBotService.Telegrams.TelegramsClient(channel)
 

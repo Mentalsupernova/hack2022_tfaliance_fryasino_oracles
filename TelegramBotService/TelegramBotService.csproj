@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Protobuf Include="..\DataBaseService\Protos\DataBase.proto" GrpcServices="Client">
+      <Link>Protos\DataBase.proto</Link>
+    </Protobuf>
+    <Protobuf Include="..\MessageNotifyerService\Protos\MessageNotifyer.proto" GrpcServices="Client">
+      <Link>Protos\MessageNotifyer.proto</Link>
+    </Protobuf>
     <Protobuf Include="Protos\Telegrams.proto" GrpcServices="Server" />
   </ItemGroup>
 
