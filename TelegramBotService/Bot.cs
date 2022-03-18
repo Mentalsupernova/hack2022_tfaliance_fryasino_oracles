@@ -17,7 +17,7 @@ namespace TelegramBotService
         TelegramBotClient botClient;
         public Bot()
         {
-
+            // https://telegrambots.github.io/book/index.html TGBOT
             botClient = new TelegramBotClient("5261466981:AAGHw8Yb3uwVXGSqX_tSggTvElntljckIsM");
             MethAsync();
         }
