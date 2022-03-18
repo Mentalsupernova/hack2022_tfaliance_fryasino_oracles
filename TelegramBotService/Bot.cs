@@ -15,11 +15,15 @@ namespace TelegramBotService
     {
         protected string s;
         TelegramBotClient botClient;
+        ClientToNotify client = new ClientToNotify();
+        ClientToDataBaseService dataBaseclient = new ClientToDataBaseService();
+
         public Bot()
         {
             // https://telegrambots.github.io/book/index.html TGBOT
             botClient = new TelegramBotClient("5261466981:AAGHw8Yb3uwVXGSqX_tSggTvElntljckIsM");
             MethAsync();
+            
         }
 
 
@@ -59,6 +63,8 @@ namespace TelegramBotService
 
             var chatId = update.Message.Chat.Id;
             var messageText = update.Message.Text;
+            await SendMessageToAnotherService(chatId.ToString(), messageText);
+            
 
             Console.WriteLine($"Received a '{messageText}' message in chat {chatId}.");
 
@@ -67,6 +73,16 @@ namespace TelegramBotService
                 chatId: chatId,
                 text: "You said:\n" + messageText,
                 cancellationToken: cancellationToken);
+        }
+
+        async Task SendMessageToAnotherService(string chatId, string message)
+        {
+            string Message = chatId + ";" + message;
+            client.SendMessage(Message);
+            Thread.Sleep(400);
+            dataBaseclient.SendMessage(Message);
+             
+
         }
 
         Task HandleErrorAsync(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)

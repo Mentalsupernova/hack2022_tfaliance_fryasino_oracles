@@ -14,8 +14,8 @@ namespace DataBaseService.Services
         IMongoDatabase UsersTable;
         public DataBaseWorker()
         {
-            client = new MongoClient(ConnectStringToDataBase);
-            client.StartSession();
+            /*client = new MongoClient(ConnectStringToDataBase);
+            client.StartSession();*/
         }
 
         public void ConnectToDataBase()

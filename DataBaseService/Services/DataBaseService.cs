@@ -22,20 +22,16 @@ namespace DataBaseService
 
             worker = new DataBaseWorker();
             _logger = logger;
-            Console.WriteLine(_logger);
-
-            
+            Console.WriteLine(_logger); 
         }
 
         public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
         {
             //TODO: Deseriliaze string and do somethings
             //worker.
-
+            Console.WriteLine("string input: " + request.Name);
             return Task.FromResult(new HelloReply
             {
-                
-
                 Message = "Hello " + request.Name
             });
         }
